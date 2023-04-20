@@ -7,6 +7,10 @@ public class Main {
     private static final String LANDMARK = "landmark";
     private static final String HELP = "help";
     private static final String EXIT = "exit";
+	private static final String FORGETFUL = "forgetful";
+	private static final String GOSSIPER = "gossiper";
+	private static final String SEALED = "sealed";
+	private static final String PEOPLE = "people";
 
     public static void main(String[] args) throws Exception {
         commands();
@@ -31,6 +35,14 @@ public class Main {
                 case LANDMARKS:
                     processLandMarksCommand(gossip);
                     break;
+                case FORGETFUL:
+                	processForgetfulCommand(in, gossip);
+                case GOSSIPER:
+                	processGossiperCommand(in, gossip);
+                case SEALED:
+                	processSealedCommand(in, gossip);
+                case PEOPLE:
+                	processPeopleCommand(gossip);
                 default:
                     processUnkwonCommand();
                     break;
@@ -39,7 +51,37 @@ public class Main {
         } while (!command.equals(EXIT));
     }
 
-    private static void processLandMarksCommand(CommunitySystem gossip) {
+    private static void processPeopleCommand(CommunitySystem gossip) {
+		}
+
+	private static void processSealedCommand(Scanner in, CommunitySystem gossip) {
+		String name = in.nextLine();
+		
+	}
+
+	private static void processForgetfulCommand(Scanner in, CommunitySystem gossip) {
+    	int gossipscapacity = in.nextInt();
+		String name = in.nextLine();
+		
+		if(gossipscapacity <=0) {
+			System.out.println("Invalid gossips capacity " + gossipscapacity + "!");
+		}
+		else if(gossip.hasForgetfulPerson(name)) {
+			System.out.println(name + " already exists!");
+		}
+		else {
+			gossip.addForgetfulPerson(gossipscapacity, name);
+			System.out.println(name + " can only remember up to " + gossipscapacity + " gossips.");
+		}
+    }
+	
+	private static void processGossiperCommand(Scanner in, CommunitySystem gossip) {
+		String name= in.nextLine();
+		gossip.addGossiperPerson(null, name);
+		
+	}
+
+	private static void processLandMarksCommand(CommunitySystem gossip) {
         Iterator<LandMark> it = gossip.listAll();
         while(it.hasNext()) {
             LandMark landmark = it.next();
@@ -63,7 +105,7 @@ public class Main {
         }
         
     }
-
+    
     private static void processUnkwonCommand() {
     }
 

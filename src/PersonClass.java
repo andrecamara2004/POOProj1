@@ -13,4 +13,6 @@ public abstract class PersonClass implements Person{
         return name;
     }
     
+    
+    public abstract String getType();
 }

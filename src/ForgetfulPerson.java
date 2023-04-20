@@ -1,10 +1,6 @@
-public class ForgetfulPerson extends PersonClass{
 
+public interface ForgetFulPerson {
 
-    public ForgetfulPerson(String name) {
-        super(name);
-    }
+	String getType();
 
-
-    
 }
