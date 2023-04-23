@@ -1,15 +1,21 @@
-public class ForgetfulPersonClass extends PersonClass implements ForgetFulPerson{
+import dataStructures.Array;
+import dataStructures.ArrayClass;
 
-	private Gossip[] gossips;
+public class ForgetfulPersonClass extends PersonClass {
+
+	private Array<Gossip> gossips;
 	private String type;
-    public ForgetfulPersonClass(Gossip[] gossips, String name) {
+    private int capacity;
+    public ForgetfulPersonClass(String name, int capacity) {
         super(name);
-        this.gossips = gossips;
+        this.gossips = new ArrayClass<>(capacity);
         this.type = "forgetful";
     }
     
     public String getType() {
     	return type;
     }
+
+    
 
 }

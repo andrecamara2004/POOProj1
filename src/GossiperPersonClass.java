@@ -1,11 +1,13 @@
+import dataStructures.Array;
+import dataStructures.ArrayClass;
 
 public class GossiperPersonClass extends PersonClass {
 	private String type;
-	private Gossip[] gossips;
+	private Array<Gossip> gossips;
 	
-	public GossiperPersonClass(Gossip[] gossips, String name) {
+	public GossiperPersonClass(String name) {
 		super(name);
-		this.gossips = gossips;
+		this.gossips = new ArrayClass<>();
 		this.type = "gossiper";
 	}
 	
