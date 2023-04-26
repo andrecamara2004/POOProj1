@@ -1,19 +1,21 @@
 import dataStructures.*;
 
 public class CommunitySystemClass implements CommunitySystem {
-
+	
+	private Array<Gossip> gossips;
     private Array<Person> people;
     private Array<LandMark> landmarks;
 
     public CommunitySystemClass() {
         this.landmarks = new ArrayClass<>();
         this.people = new ArrayClass<>();
+        this.gossips = new ArrayClass<>();
     }
 
     @Override
     public boolean isLandmarkFull(String landmark) {
         LandMark place = getLandMark(landmark);
-        return landmarks.size() == place.getCapacity();
+        return place.getOccupation() == place.getCapacity();
     }
 
     public void addForgetfulPerson(String name, int capacity) {
@@ -124,7 +126,7 @@ public class CommunitySystemClass implements CommunitySystem {
         return person.getCurrLandmark();
     }
 
-    private Person getPerson(String name) {
+    public Person getPerson(String name) {
         Person person = null;
         Iterator<Person> iter = this.people.iterator();
         while (iter.hasNext()) {
@@ -191,4 +193,47 @@ public class CommunitySystemClass implements CommunitySystem {
 
     }
 
+	@Override
+	public void startGossip(Gossip gossip) {
+		gossips.insertLast(gossip);
+		
+	}
+
+	@Override
+	public Iterator<Gossip> gossip(String name) {
+		Person person = getPerson(name);
+        Group group = person.getCurrGroup();
+        Iterator<Person> personsToShare = group.listAllPeople();
+        Iterator<Gossip> gossipsToShare = person.getGossipsToShare();
+        while(personsToShare.hasNext()) {
+            Person curPerson = personsToShare.next();
+            if(curPerson != person) {
+                while(gossipsToShare.hasNext()) {
+                    curPerson.listenGossip(gossipsToShare.next());        
+                }
+                gossipsToShare.rewind();
+            }
+        }
+		
+        return gossipsToShare;
+	}
+
+
+    @Override
+    public boolean personKnowsNothing(String name) {
+        Person person = getPerson(name);
+        return person.getNumOfGossips() == 0;
+    }
+
+    @Override
+    public boolean hasGossip(Person person, Array<Person> targets, String gossip) {
+        //TODO
+        return false;
+    }
+
+    @Override
+    public boolean isPersonAbleToShareAGossip(String name) {
+        Person person = getPerson(name);
+        return person.hasGossipsToShare();
+    }
 }

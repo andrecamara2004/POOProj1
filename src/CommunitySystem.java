@@ -49,4 +49,16 @@ public interface CommunitySystem {
     boolean isPersonAlone(String name);
 
     void isolatePerson(String name);
+
+	void startGossip(Gossip gossip);
+
+	Iterator<Gossip> gossip(String name);
+
+    boolean personKnowsNothing(String name);
+
+    Person getPerson(String name);
+
+    boolean hasGossip(Person person, Array<Person> targets, String gossip);
+
+    boolean isPersonAbleToShareAGossip(String name);
 }

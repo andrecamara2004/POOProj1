@@ -1,5 +1,6 @@
 import dataStructures.Array;
 import dataStructures.ArrayClass;
+import dataStructures.Iterator;
 
 public abstract class PersonClass implements Person{
 
@@ -26,8 +27,7 @@ public abstract class PersonClass implements Person{
 
     @Override
     public int getNumOfGossips() {
-        // TODO Auto-generated method stub
-        return 0;
+        return gossips.size();
     }
 
     @Override
@@ -79,6 +79,24 @@ public abstract class PersonClass implements Person{
         return group == null || group.count() == 1;
     }
 
-    
 
+    @Override
+    public Array<Gossip> getGossips() {
+        return gossips;
+    }
+
+
+    //PRE: hasGossips()
+    @Override
+    public boolean hasGossipsToShare() {
+        return true;
+    }
+
+
+    @Override
+    public abstract Iterator<Gossip> getGossipsToShare();
+
+
+    @Override
+    public abstract void listenGossip(Gossip next);
 }

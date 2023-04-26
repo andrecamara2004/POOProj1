@@ -1,7 +1,10 @@
+import dataStructures.*;
+
 public interface Person {
 
     String getName();
     String getType();
+    //hasGossips
     int getNumOfGossips();
     void goToHome();
     LandMark getCurrLandmark();
@@ -11,4 +14,8 @@ public interface Person {
     void setGroup(Group group);
     void clearGroup();
     boolean isAlone();
+    Array<Gossip> getGossips();
+    boolean hasGossipsToShare();
+    Iterator<Gossip> getGossipsToShare();
+    void listenGossip(Gossip next);
 }
