@@ -1,6 +1,6 @@
 import dataStructures.*;
 
-public class GossipClass implements Gossip{
+public class GossipClass implements Gossip {
 
     private Person owner;
     private Array<Person> targets;
@@ -15,7 +15,7 @@ public class GossipClass implements Gossip{
     }
 
     public String getGossip() {
-    	return gossip;
+        return gossip;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class GossipClass implements Gossip{
     public boolean isTargeting(Person person) {
         boolean check = false;
         for (int i = 0; i < targets.size(); i++) {
-            if(targets.get(i) == person) {
+            if (targets.get(i) == person) {
                 check = true;
                 break;
             }
@@ -46,4 +46,32 @@ public class GossipClass implements Gossip{
         return check;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (super.equals(obj)) {
+            return true;
+        }
+
+        GossipClass otherGossip = (GossipClass)obj;
+        if(!this.getGossip().equals(otherGossip.getGossip())) {
+            return false;
+        } 
+
+        if(this.getOwner() != otherGossip.getOwner()) {
+            return false;
+        }
+
+
+        if(this.targets.size() != otherGossip.targets.size()) {
+            return false;
+        }
+
+        for(int i = 0; i < this.targets.size(); i++) {
+            if(!otherGossip.isTargeting(this.targets.get(i))) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

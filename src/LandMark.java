@@ -18,4 +18,8 @@ public interface LandMark {
     int getAmountOfGroups();
 
     Iterator<Group> listAllGroups();
+
+    Array<Group> getGroups();
+
+    void isolate(Person person);
 }

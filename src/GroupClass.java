@@ -22,6 +22,7 @@ public class GroupClass implements Group {
         int pos = group.searchIndexOf(person);
         group.removeAt(pos);
         person.clearGroup();
+        
     }
 
     @Override

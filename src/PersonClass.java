@@ -70,7 +70,6 @@ public abstract class PersonClass implements Person{
     @Override
     public void clearGroup() {
         group = null;
-        
     }
 
 
@@ -99,4 +98,6 @@ public abstract class PersonClass implements Person{
 
     @Override
     public abstract void listenGossip(Gossip next);
+
+    public abstract int getCapacity();
 }

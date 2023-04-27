@@ -66,7 +66,7 @@ public class LandMarkClass implements LandMark {
         }
 
         // mark person as without group;
-        person.clearGroup();
+        group.isolate(person);
 
         // remove person from landmark
         people.removeAt(people.searchIndexOf(person));
@@ -93,6 +93,19 @@ public class LandMarkClass implements LandMark {
     @Override
     public Iterator<Group> listAllGroups() {
         return groups.iterator();
+    }
+
+    @Override
+    public Array<Group> getGroups() {
+        return groups;
+    }
+
+    @Override
+    public void isolate(Person person) {
+        Group group = person.getCurrGroup();
+        group.isolate(person);
+        Group otherGroup = new GroupClass(person);
+        groups.insertLast(otherGroup);
     }
 
 }

@@ -32,15 +32,33 @@ Judy Hale is now at Honeymoon suite.
 Nate Archibald is now at Honeymoon suite.
 Honeymoon suite is too crowded! Will Benson went home.
 Freddy Balcony is now at Lonely place.
-Nate Archibald joined Judy Hale, Nate Archibald at the Honeymoon suite.
+Nate Archibald joined Judy Hale, at the Honeymoon suite.
 1 groups at Honeymoon suite:
 Judy Hale, Nate Archibald
 Lonely place is too crowded! Judy Hale went home.
 1 groups at Honeymoon suite:
-Judy Hale, Nate Archibald
+Nate Archibald
 1 groups at Lonely place:
 Freddy Balcony
-Honeymoon suite is too crowded! Julie James went home.
+Julie James is now at Honeymoon suite.
 You must understand we have no surveillance tech at home! Privacy is our top concern!
+2 groups at Honeymoon suite:
+Nate Archibald
+Julie James
+Nate Archibald joined Julie James, at the Honeymoon suite.
 1 groups at Honeymoon suite:
-Judy Hale, Nate Archibald
+Julie James, Nate Archibald
+1 groups at Lonely place:
+Freddy Balcony
+Nobody is at HOME!
+Dory at home knows 0 gossips.
+Freddy Balcony at Lonely place knows 0 gossips.
+Jason Bourne at home knows 0 gossips.
+Nate Archibald at Honeymoon suite knows 0 gossips.
+Lady Whistledown at home knows 0 gossips.
+Sweetest Popcorn at home knows 0 gossips.
+Judy Hale at home knows 0 gossips.
+Liza Miller at home knows 0 gossips.
+Will Benson at home knows 0 gossips.
+Julie James at Honeymoon suite knows 0 gossips.
+Bye!

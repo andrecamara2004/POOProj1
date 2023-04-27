@@ -5,10 +5,13 @@ public interface Gossip {
 
     String getGossip();
 
+
     Iterator<Person> getTargetsIter();
 
     Iterator<Person> getListenersIter();
 
     boolean isTargeting(Person person);
+
+    boolean equals(Object obj);
 
 }

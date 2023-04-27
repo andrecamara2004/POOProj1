@@ -65,10 +65,13 @@ public class Main {
                     break;
                 case ISOLATE:
                     processIsolateCommand(in, community);
+                    break;
                 case START:
                     processStartCommand(in, community);
+                    break;
                 case GOSSIP:
                     processGossipCommand(in, community);
+                    break;
                 default:
                     processUnkwonCommand();
                     break;
@@ -107,38 +110,53 @@ public class Main {
         String owner = in.nextLine().trim();
         int n = in.nextInt();
         in.nextLine();
+        if (n <= 0) {
+            in.nextLine();
+        } else {
+            String[] arr = new String[n];
+            Array<Person> targets = new ArrayClass<>(n);
+            boolean targetExists = true;
+            String targetThatDontExists = "";
+            for (int i = 0; i < n; i++) {
+                String target = in.nextLine();
+                arr[i] = target;
+            }
+            for (int j = 0; j < n; j++) {
+                if (community.hasPerson(arr[j])) {
+                    Person person = community.getPerson(arr[j]);
+                    targets.insertAt(person, j);
+                } else {
+                    targetThatDontExists += arr[j];
+                    targetExists = false;
+                    break;
+                }
+            }
 
-        String[] arr = new String[n];
-        Array<Person> targets = new ArrayClass<>(n);
-        boolean targetExists = true;
-        String targetThatDontExists = "";
-        for (int i = 0; i < n; i++) {
-            String target = in.nextLine();
-            arr[i] = target;
-        }
-        for (int j = 0; j < n; j++) {
-            if (community.hasPerson(arr[j])) {
-                Person person = community.getPerson(arr[j]);
-                targets.insertAt(person, j);
+            String result = "";
+            for (int i = 0; i < arr.length; i++) {
+                result += arr[i] + ", ";
+            }
+
+            String gossipString = in.nextLine();
+            
+            if (!community.hasPerson(owner)) {
+                System.out.println(owner + " does not exist!");
+            } else if (!targetExists) {
+                System.out.println(targetThatDontExists + " does not exist!");
+            } else if (community.hasGossip(owner, targets, gossipString)) {
+                System.out.println("Duplicate gossip!");
             } else {
-                targetThatDontExists += arr[j];
-                targetExists = false;
+                Gossip gossip = new GossipClass(community.getPerson(owner), targets, gossipString);
+                community.startGossip(gossip, community.getPerson(owner));
+                System.out.printf("Have you heard about %s? %s\n", result.substring(0, result.length() - 2),
+                        gossipString);
+
             }
         }
-
-        String gossipString = in.nextLine();
-        if (!community.hasPerson(owner)) {
+        if (!community.hasPerson(owner) && n <= 0) {
             System.out.println(owner + " does not exist!");
         } else if (n <= 0) {
             System.out.println("Invalid number " + n + " of gossip targets!");
-        } else if (!targetExists) {
-            System.out.println(targetThatDontExists + " does not exist!");
-        } else if (community.hasGossip(community.getPerson(owner), targets, gossipString)) {
-            System.out.println("Duplicate gossip!");
-        } else {
-            Gossip gossip = new GossipClass(community.getPerson(owner), targets, gossipString);
-            community.startGossip(gossip);
-            System.out.println();
         }
     }
 
@@ -152,7 +170,7 @@ public class Main {
             System.out.println(name + " is already alone!");
         } else {
             gossip.isolatePerson(name);
-            System.out.println(name + " is now alone " + gossip.getLandmarkOfPerson(name).getName() + ".");
+            System.out.println(name + " is now alone at " + gossip.getLandmarkOfPerson(name).getName() + ".");
         }
 
     }
@@ -200,18 +218,18 @@ public class Main {
         } else if (gossip.isPersonAtHome(name1)) {
             System.out.printf("%s is at home!\n", name1);
         } else if (!gossip.isAtSameLandMark(name1, name2)) {
-            System.out.printf("%s is not in %s!\n", name2, gossip.getLandmarkOfPerson(name2).getName());
+            System.out.printf("%s is not in %s!\n", name2, gossip.getLandmarkOfPerson(name1).getName());
         } else if (gossip.isAtSameGroup(name1, name2)) {
             System.out.printf("%s and %s are already in the same group!\n", name1, name2);
         } else {
-            gossip.personJoinsGroup(name1, name2);
             Iterator<Person> iter = gossip.listAllPeopleInGroup(name2);
+            gossip.personJoinsGroup(name1, name2);
             String peopleInGroup = "";
             while (iter.hasNext()) {
                 peopleInGroup += iter.next().getName() + ", ";
 
             }
-            peopleInGroup = peopleInGroup.substring(0, peopleInGroup.length() - 2);
+            peopleInGroup = peopleInGroup.substring(0, peopleInGroup.length() - 1);
             System.out.printf("%s joined %s at the %s.\n", name1,
                     peopleInGroup, gossip.getLandmarkOfPerson(name2).getName());
         }

@@ -41,4 +41,8 @@ public class GossiperPersonClass extends PersonClass {
 		gossips.insertLast(next);
 	}
 
+	public int getCapacity() {
+        return 0;
+    }
+	
 }

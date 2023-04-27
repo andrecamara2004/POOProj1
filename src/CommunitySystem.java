@@ -50,7 +50,7 @@ public interface CommunitySystem {
 
     void isolatePerson(String name);
 
-	void startGossip(Gossip gossip);
+	void startGossip(Gossip gossip, Person person);
 
 	Iterator<Gossip> gossip(String name);
 
@@ -58,7 +58,7 @@ public interface CommunitySystem {
 
     Person getPerson(String name);
 
-    boolean hasGossip(Person person, Array<Person> targets, String gossip);
-
     boolean isPersonAbleToShareAGossip(String name);
+
+    boolean hasGossip(String owner, Array<Person> targets, String gossipString);
 }

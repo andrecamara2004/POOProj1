@@ -83,6 +83,8 @@ public class CommunitySystemClass implements CommunitySystem {
     @Override
     public void personGoesHome(String name) {
         Person person = getPerson(name);
+        LandMark landMark = person.getCurrLandmark();
+        landMark.removePerson(person);
         person.goToHome();
     }
 
@@ -93,6 +95,7 @@ public class CommunitySystemClass implements CommunitySystem {
         if (!person.isAtHome()) {
             LandMark curLandmark = person.getCurrLandmark();
             curLandmark.removePerson(person);
+            person.clearGroup();
         }
 
         LandMark place = getLandMark(landmark);
@@ -188,15 +191,19 @@ public class CommunitySystemClass implements CommunitySystem {
     @Override
     public void isolatePerson(String name) {
         Person person = getPerson(name);
-        Group group = person.getCurrGroup();
-        group.isolate(person);
-
+        LandMark landmark = person.getCurrLandmark();
+        landmark.isolate(person);
     }
 
 	@Override
-	public void startGossip(Gossip gossip) {
+	public void startGossip(Gossip gossip, Person person) {
 		gossips.insertLast(gossip);
-		
+        if(person.getType().equals("fortgetful") && person.getGossips().size() == person.getCapacity()) {
+            person.getGossips().removeAt(0);
+            person.getGossips().insertLast(gossip);
+        } else {
+            person.getGossips().insertLast(gossip);
+        }
 	}
 
 	@Override
@@ -225,15 +232,24 @@ public class CommunitySystemClass implements CommunitySystem {
         return person.getNumOfGossips() == 0;
     }
 
-    @Override
-    public boolean hasGossip(Person person, Array<Person> targets, String gossip) {
-        //TODO
-        return false;
-    }
 
     @Override
     public boolean isPersonAbleToShareAGossip(String name) {
         Person person = getPerson(name);
         return person.hasGossipsToShare();
+    }
+
+    @Override
+    public boolean hasGossip(String owner, Array<Person> targets, String gossipString) {
+        Person ownerPerson = getPerson(owner);
+        Gossip gossip = new GossipClass(ownerPerson, targets, gossipString);
+
+        for(int i = 0; i < gossips.size(); i++) {
+            if(gossips.get(i).equals(gossip)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

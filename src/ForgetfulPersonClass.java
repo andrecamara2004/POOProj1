@@ -14,6 +14,7 @@ public class ForgetfulPersonClass extends PersonClass {
         this.gossips = new ArrayClass<>(capacity);
         this.type = "forgetful";
         this.posGossip = 0;
+        this.capacity = capacity;
     }
     
     public String getType() {
@@ -44,6 +45,10 @@ public class ForgetfulPersonClass extends PersonClass {
     public void setGroup(Group otherGroup) {
         super.setGroup(otherGroup);
         posGossip = 0;
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 
 }

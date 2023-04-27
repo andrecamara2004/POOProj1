@@ -56,4 +56,8 @@ public class SealedPersonClass extends PersonClass {
 		gossips.insertLast(next);
 	}
 
+	public int getCapacity() {
+        return 0;
+    }
+
 }
