@@ -3,6 +3,7 @@ import dataStructures.*;
 
 public class Main {
 
+    private static final String SECRETS = "secrets";
     private static final String START = "start";
     private static final String ISOLATE = "isolate";
     private static final String GROUPS = "groups";
@@ -72,12 +73,18 @@ public class Main {
                 case GOSSIP:
                     processGossipCommand(in, community);
                     break;
+                case SECRETS:
+                    processSecretsCommand(in, community);
+                    break;
                 default:
                     processUnkwonCommand();
                     break;
 
             }
         } while (!command.equals(EXIT));
+    }
+
+    private static void processSecretsCommand(Scanner in, CommunitySystem community) {
     }
 
     private static void processGossipCommand(Scanner in, CommunitySystem community) {
