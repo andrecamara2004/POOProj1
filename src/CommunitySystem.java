@@ -61,4 +61,6 @@ public interface CommunitySystem {
     boolean isPersonAbleToShareAGossip(String name);
 
     boolean hasGossip(String owner, Array<Person> targets, String gossipString);
+
+    Array<Gossip> getGossipsAboutPerson(String name);
 }

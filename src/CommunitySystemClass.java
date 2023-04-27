@@ -252,4 +252,20 @@ public class CommunitySystemClass implements CommunitySystem {
 
         return false;
     }
+
+    @Override
+    public Array<Gossip> getGossipsAboutPerson(String name) {
+        Person person = getPerson(name);
+        Array<Gossip> gossipsAboutPerson = new ArrayClass<>();
+        
+        for (int i = 0; i < gossips.size(); i++) {
+            for (int j = 0; j < gossips.get(i).getTargets().size(); j++) {
+                if(gossips.get(i).getTargets().get(j).equals(person)) {
+                    gossipsAboutPerson.insertLast(gossips.get(i));
+                }
+            }   
+        }
+
+        return gossipsAboutPerson;
+    }
 }

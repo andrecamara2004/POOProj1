@@ -3,6 +3,7 @@ import dataStructures.*;
 
 public class Main {
 
+    private static final String INFOTAINMENT = "infotainment";
     private static final String SECRETS = "secrets";
     private static final String START = "start";
     private static final String ISOLATE = "isolate";
@@ -76,6 +77,9 @@ public class Main {
                 case SECRETS:
                     processSecretsCommand(in, community);
                     break;
+                case INFOTAINMENT:
+                    processInfotainmentCommand(in, community);
+                    break;
                 default:
                     processUnkwonCommand();
                     break;
@@ -84,11 +88,42 @@ public class Main {
         } while (!command.equals(EXIT));
     }
 
+    private static void processInfotainmentCommand(Scanner in, CommunitySystem community) {
+        String name = in.nextLine().trim();
+        if (!community.hasPerson(name)) {
+            System.out.println(name + " does not exist!");
+        } else if (community.getPerson(name).getNumOfGossips() == 0) {
+            System.out.printf("%s knows nothing!\n", name);
+        } else {
+
+            System.out.printf("%s knows things:\n", name);
+            Iterator<Gossip> iter = community.getPerson(name).getGossips().iterator();
+            while (iter.hasNext()) {
+                Gossip gossip = iter.next();
+                System.out.println(gossip.getGossip());
+            }
+        }
+    }
+
     private static void processSecretsCommand(Scanner in, CommunitySystem community) {
+        String name = in.nextLine().trim();
+        if (!community.hasPerson(name)) {
+            System.out.println(name + " does not exist!");
+        } else if (community.getGossipsAboutPerson(name).size() == 0) {
+            System.out.println(name + " lives a very boring life!");
+        } else {
+
+            Iterator<Gossip> iter = community.getGossipsAboutPerson(name).iterator();
+            while (iter.hasNext()) {
+                Gossip next = iter.next();
+                System.out.printf("%d %s\n", next.getListeners().size(), next.getGossip());
+
+            }
+        }
     }
 
     private static void processGossipCommand(Scanner in, CommunitySystem community) {
-        String name = in.nextLine();
+        String name = in.nextLine().trim();
 
         if (!community.hasPerson(name)) {
             System.out.println(name + " does not exist!");
@@ -145,7 +180,7 @@ public class Main {
             }
 
             String gossipString = in.nextLine();
-            
+
             if (!community.hasPerson(owner)) {
                 System.out.println(owner + " does not exist!");
             } else if (!targetExists) {

@@ -74,4 +74,14 @@ public class GossipClass implements Gossip {
 
         return true;
     }
+
+    @Override
+    public Array<Person> getTargets() {
+        return targets;
+    }
+
+    @Override
+    public Array<Person> getListeners() {
+        return listeners;
+    }
 }

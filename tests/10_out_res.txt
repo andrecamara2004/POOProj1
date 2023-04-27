@@ -7,12 +7,8 @@ Capulet mansion added.
 Romeo Montague lips are sealed.
 Juliet Capulet lips are sealed.
 William Shakespeare is a gossiper.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
+William Shakespeare knows nothing!
+William Milkshakespeare does not exist!
 Romeo Montague is now at tree.
 Juliet Capulet is now at tree.
 Mercutio at home knows 0 gossips.
@@ -39,7 +35,8 @@ Mercutio at home knows 0 gossips.
 Romeo Montague at tree knows 1 gossips.
 Juliet Capulet at tree knows 1 gossips.
 William Shakespeare at home knows 3 gossips.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
-Unknown command. Type help to see available commands.
+William Shakespeare knows things:
+Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
+These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
 Bye!

@@ -14,4 +14,8 @@ public interface Gossip {
 
     boolean equals(Object obj);
 
+    Array<Person> getTargets();
+
+    Array<Person> getListeners();
+
 }
