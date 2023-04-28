@@ -8,7 +8,6 @@ public abstract class PersonClass implements Person {
     protected Array<Gossip> gossips;
     protected int posGossip;
 
-
     public PersonClass(String name) {
         this.name = name;
         this.landmark = null;
@@ -22,7 +21,14 @@ public abstract class PersonClass implements Person {
     }
 
     @Override
-    public abstract int getNumOfGossips();
+    public int getNumOfGossips() {
+        return gossips.size();
+    }
+
+    @Override
+    public boolean hasGossip(Gossip sharedGossip) {
+        return gossips.searchForward(sharedGossip);
+    }
 
     @Override
     public void goToHome() {
@@ -52,7 +58,6 @@ public abstract class PersonClass implements Person {
     @Override
     public void setGroup(Group otherGroup) {
         group = otherGroup;
-
     }
 
     @Override
@@ -74,23 +79,18 @@ public abstract class PersonClass implements Person {
     @Override
     public abstract Iterator<Gossip> getGossipsToShare();
 
-	@Override
-	public Iterator<Gossip> getGossipsList() {
-		Array<Gossip> list = new ArrayClass<Gossip>(gossips.size());
-		for (int i = 0; i < gossips.size(); i++) {
-			list.insertAt(gossips.get((posGossip + i) % gossips.size()), i);
-		}
+    @Override
+    public Iterator<Gossip> getGossipsList() {
+        Array<Gossip> list = new ArrayClass<Gossip>(gossips.size());
+        for (int i = 0; i < gossips.size(); i++) {
+            list.insertAt(gossips.get((posGossip + i) % gossips.size()), i);
+        }
 
-		return list.iterator();
-	}
+        return list.iterator();
+    }
 
     @Override
     public abstract void listenGossip(Gossip next);
-
-    public abstract int getCapacity();
-
-    @Override
-    public abstract boolean hasGossip(Gossip sharedGossip);
 
     @Override
     public boolean hasSharedAGossip(Person person) {
@@ -105,4 +105,8 @@ public abstract class PersonClass implements Person {
         return check;
     }
 
+    @Override
+    public Array<Gossip> getGossips() {
+        return gossips;
+    }
 }

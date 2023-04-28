@@ -46,23 +46,4 @@ public class SealedPersonClass extends PersonClass {
 	public void listenGossip(Gossip next) {
 		gossips.insertLast(next);
 	}
-
-	public int getCapacity() {
-		return 0;
-	}
-
-	@Override
-	public Array<Gossip> getGossips() {
-		return gossips;
-	}
-
-	@Override
-	public int getNumOfGossips() {
-		return gossips.size();
-	}
-
-	@Override
-	public boolean hasGossip(Gossip sharedGossip) {
-		return gossips.searchForward(sharedGossip);
-	}
 }
