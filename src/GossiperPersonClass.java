@@ -44,5 +44,15 @@ public class GossiperPersonClass extends PersonClass {
 	public int getCapacity() {
         return 0;
     }
+
+	@Override
+	public Array<Gossip> getGossips() {
+		return gossips;
+	}
+
+	@Override
+	public int getNumOfGossips() {
+		return gossips.size();
+	}
 	
 }

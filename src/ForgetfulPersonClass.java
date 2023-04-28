@@ -51,4 +51,14 @@ public class ForgetfulPersonClass extends PersonClass {
         return capacity;
     }
 
+    @Override
+    public Array<Gossip> getGossips() {
+        return gossips;
+    }
+
+    @Override
+    public int getNumOfGossips() {
+        return gossips.size();
+    }
+
 }

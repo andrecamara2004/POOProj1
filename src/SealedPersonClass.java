@@ -60,4 +60,14 @@ public class SealedPersonClass extends PersonClass {
         return 0;
     }
 
+	@Override
+	public Array<Gossip> getGossips() {
+		return gossips;
+	}
+
+	@Override
+	public int getNumOfGossips() {
+		return gossips.size();
+	}
+
 }

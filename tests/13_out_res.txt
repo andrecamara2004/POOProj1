@@ -40,21 +40,16 @@ Romeo Montague at tree knows 0 gossips.
 Juliet Capulet at tree knows 0 gossips.
 William Shakespeare at home knows 0 gossips.
 Here is what we know about Romeo Montague:
-0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
-0 Juliet and Romeo, r in luv!
-0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
-0 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
-0 My love, Romeo!
+1 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+1 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
+1 My love, Romeo!
 Here is what we know about Juliet Capulet:
-0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
-0 Juliet and Romeo, r in luv!
-0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
-0 Juliet is not really dead, she is just sleeping.
-0 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
-0 Oh Juliet, I love you!
-0 My love, Romeo!
+1 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+1 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
+1 Oh Juliet, I love you!
+1 My love, Romeo!
 Mercutio lives a very boring life!
 Friar Lawrence lives a very boring life!
 Here is what we know about William Shakespeare:
-0 Rumor has it that William Shakespeare is a gossiper.
+1 Rumor has it that William Shakespeare is a gossiper.
 Bye!

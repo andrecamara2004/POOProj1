@@ -268,4 +268,20 @@ public class CommunitySystemClass implements CommunitySystem {
 
         return gossipsAboutPerson;
     }
+
+    @Override
+    public int getNumOfListeners(Gossip gossip) {
+        int numOfListeners = 0;
+        for(int i = 0; i < people.size(); i++) {
+            for(int j = 0; j < people.get(i).getGossips().size(); j++) {
+                if(people.get(i).getGossips().get(j).equals(gossip)) {
+                    numOfListeners++;
+                }
+            }
+        }
+
+        return numOfListeners;
+    }
+
+    
 }

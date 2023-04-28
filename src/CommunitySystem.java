@@ -206,4 +206,6 @@ public interface CommunitySystem {
 	 * 
 	 */
 	Array<Gossip> getGossipsAboutPerson(String name);
+
+     int getNumOfListeners (Gossip gossip);
 }

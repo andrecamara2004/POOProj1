@@ -83,6 +83,7 @@ public class Main {
                     break;
                 case HOTTEST:
                 	processHottestCommand(community);
+                    break;
                 default:
                     processUnkwonCommand();
                     break;
@@ -125,7 +126,10 @@ public class Main {
             Iterator<Gossip> iter = community.getGossipsAboutPerson(name).iterator();
             while (iter.hasNext()) {
                 Gossip next = iter.next();
-                System.out.printf("%d %s\n", next.getListeners().size(), next.getGossip());
+                if( community.getNumOfListeners(next) == 0) {
+                    continue;
+                }
+                System.out.printf("%d %s\n", community.getNumOfListeners(next), next.getGossip());
 
             }
         }
@@ -140,17 +144,22 @@ public class Main {
             System.out.println(name + " has nobody to gossip with right now!");
         } else if (community.personKnowsNothing(name)) {
             System.out.println(name + " knows nothing!");
-        } else if (community.isPersonAbleToShareAGossip(name)) {
+        } else if (!community.isPersonAbleToShareAGossip(name)) {
             System.out.println(name + " does not wish to gossip right now!");
         } else {
             Iterator<Gossip> sharedGossips = community.gossip(name);
             Iterator<Person> peopleInGroupIter = community.listAllPeopleInGroup(name);
             String peopleInGroup = "";
             while (peopleInGroupIter.hasNext()) {
-                peopleInGroup += peopleInGroupIter.next().getName() + ", ";
+                Person next = peopleInGroupIter.next();
+                if(next.equals(community.getPerson(name))) {
+                    continue;
+                } else {
+                    peopleInGroup += next.getName() + ", ";
+                }
 
             }
-            System.out.println(name + " shared with " + peopleInGroup + " some hot news!");
+            System.out.println(name + " shared with " + peopleInGroup + "some hot news!");
             while (sharedGossips.hasNext()) {
                 System.out.println(sharedGossips.next().getGossip());
             }

@@ -24,7 +24,10 @@ G
 H
 I
 gossiper2 knows nothing!
-gossiper1 does not wish to gossip right now!
+gossiper1 shared with gossiper2, some hot news!
+A
+B
+C
 Have you heard about gossiper1? J
 gossiper1 knows things:
 A
@@ -37,7 +40,10 @@ G
 H
 I
 J
-gossiper2 knows nothing!
+gossiper2 knows things:
+A
+B
+C
 Have you heard about gossiper2, gossiper1? AA
 gossiper1 knows things:
 A
@@ -51,8 +57,14 @@ H
 I
 J
 gossiper2 knows things:
+A
+B
+C
 AA
-gossiper2 does not wish to gossip right now!
+gossiper2 shared with gossiper1, some hot news!
+A
+B
+C
 gossiper1 knows things:
 A
 B
@@ -64,9 +76,18 @@ G
 H
 I
 J
+A
+B
+C
 gossiper2 knows things:
+A
+B
+C
 AA
-gossiper2 does not wish to gossip right now!
+gossiper2 shared with gossiper1, some hot news!
+AA
+A
+B
 gossiper1 knows things:
 A
 B
@@ -78,13 +99,40 @@ G
 H
 I
 J
-gossiper2 knows things:
+A
+B
+C
 AA
-gossiper1 does not wish to gossip right now!
-gossiper1 does not wish to gossip right now!
+A
+B
 gossiper2 knows things:
+A
+B
+C
 AA
-gossiper1 does not wish to gossip right now!
+gossiper1 shared with gossiper2, some hot news!
+D
+E
+F
+gossiper1 shared with gossiper2, some hot news!
+G
+H
+I
+gossiper2 knows things:
+A
+B
+C
+AA
+D
+E
+F
+G
+H
+I
+gossiper1 shared with gossiper2, some hot news!
+J
+A
+B
 gossiper1 knows things:
 A
 B
@@ -96,6 +144,24 @@ G
 H
 I
 J
-gossiper2 knows things:
+A
+B
+C
 AA
+A
+B
+gossiper2 knows things:
+A
+B
+C
+AA
+D
+E
+F
+G
+H
+I
+J
+A
+B
 Bye!

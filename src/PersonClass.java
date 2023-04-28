@@ -1,17 +1,13 @@
-import dataStructures.Array;
-import dataStructures.ArrayClass;
-import dataStructures.Iterator;
+import dataStructures.*;
 
 public abstract class PersonClass implements Person{
 
     private String name;
     private LandMark landmark;
-    private Array<Gossip> gossips;
     private Group group;
 
     public PersonClass(String name) {
         this.name = name;
-        this.gossips = new ArrayClass<>();
         this.landmark = null;
         this.group = null;
     }
@@ -26,9 +22,7 @@ public abstract class PersonClass implements Person{
     public abstract String getType();
 
     @Override
-    public int getNumOfGossips() {
-        return gossips.size();
-    }
+    public abstract int getNumOfGossips();
 
     @Override
     public void goToHome() {
@@ -76,12 +70,6 @@ public abstract class PersonClass implements Person{
     @Override
     public boolean isAlone() {
         return group == null || group.count() == 1;
-    }
-
-
-    @Override
-    public Array<Gossip> getGossips() {
-        return gossips;
     }
 
 
