@@ -4,8 +4,8 @@ import dataStructures.Iterator;
 
 public class ForgetfulPersonClass extends PersonClass {
 
-	private Array<Gossip> gossips;
-	private String type;
+    private Array<Gossip> gossips;
+    private String type;
     private int capacity;
     private int posGossip;
 
@@ -16,9 +16,9 @@ public class ForgetfulPersonClass extends PersonClass {
         this.posGossip = 0;
         this.capacity = capacity;
     }
-    
+
     public String getType() {
-    	return type;
+        return type;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class ForgetfulPersonClass extends PersonClass {
         Array<Gossip> gossipsToShare = new ArrayClass<>(1);
         gossipsToShare.insertLast(gossips.get(posGossip));
         posGossip++;
-        if(posGossip >= capacity) {
+        if (posGossip >= capacity) {
             posGossip = 0;
         }
 
@@ -35,7 +35,7 @@ public class ForgetfulPersonClass extends PersonClass {
 
     @Override
     public void listenGossip(Gossip next) {
-        if(gossips.size() == capacity) {
+        if (gossips.size() == capacity) {
             gossips.removeAt(0);
         }
         gossips.insertLast(next);
@@ -59,6 +59,25 @@ public class ForgetfulPersonClass extends PersonClass {
     @Override
     public int getNumOfGossips() {
         return gossips.size();
+    }
+
+    @Override
+    public boolean hasGossip(Gossip sharedGossip) {
+        return gossips.searchForward(sharedGossip);
+    }
+
+    @Override
+    public boolean hasSharedAGossip(Person person) {
+        boolean check = false;
+        for (int i = 0; i < gossips.size(); i++) {
+            for (int j = 0; j < person.getGossips().size(); j++) {
+                if (this.gossips.get(i).equals(person.getGossips().get(j))) {
+                    check = true;
+                }
+            }
+        }
+
+        return check;
     }
 
 }

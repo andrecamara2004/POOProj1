@@ -70,4 +70,23 @@ public class SealedPersonClass extends PersonClass {
 		return gossips.size();
 	}
 
+    @Override
+    public boolean hasGossip(Gossip sharedGossip) {
+        return gossips.searchForward(sharedGossip);
+    }
+
+		
+    @Override
+    public boolean hasSharedAGossip(Person person) {
+        boolean check = false;
+        for (int i = 0; i < gossips.size(); i++) {
+            for (int j = 0; j < person.getGossips().size(); j++) {
+                if (this.gossips.get(i).equals(person.getGossips().get(j))) {
+                    check = true;
+                }
+            }
+        }
+
+		return check;
+	}
 }

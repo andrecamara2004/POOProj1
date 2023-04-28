@@ -12,67 +12,67 @@ Have you heard about forgetful1? C
 Have you heard about forgetful1? D
 Have you heard about forgetful1? E
 forgetful1 knows things:
-A
-B
 C
 D
 E
 forgetful2 knows nothing!
 Have you heard about forgetful2, forgetful1? AA
 forgetful1 knows things:
-A
-B
 C
 D
 E
 forgetful2 knows things:
 AA
-forgetful2 does not wish to gossip right now!
+forgetful2 shared with forgetful1, some hot news!
+AA
 forgetful1 knows things:
-A
-B
-C
 D
 E
+AA
 forgetful2 knows things:
 AA
-forgetful1 does not wish to gossip right now!
+forgetful1 shared with forgetful2, some hot news!
+D
 forgetful1 knows things:
-A
-B
-C
 D
 E
+AA
 forgetful2 knows things:
 AA
-forgetful1 does not wish to gossip right now!
+D
+forgetful1 shared with forgetful2, some hot news!
+E
 forgetful1 knows things:
-A
-B
-C
 D
 E
+AA
 forgetful2 knows things:
 AA
-forgetful1 does not wish to gossip right now!
-forgetful1 does not wish to gossip right now!
+D
+E
+forgetful1 shared with forgetful2, some hot news!
+AA
+forgetful1 shared with forgetful2, some hot news!
+D
 forgetful1 knows things:
-A
-B
-C
 D
 E
+AA
 forgetful2 knows things:
 AA
+D
+E
 forgetful1 joined forgetful3, at the landmark1.
-forgetful1 does not wish to gossip right now!
+forgetful1 shared with forgetful3, some hot news!
+D
 forgetful1 knows things:
-A
-B
-C
 D
 E
+AA
 forgetful2 knows things:
 AA
-forgetful3 knows nothing!
+D
+E
+forgetful3 knows things:
+D
 Bye!

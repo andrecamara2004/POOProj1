@@ -76,9 +76,6 @@ G
 H
 I
 J
-A
-B
-C
 gossiper2 knows things:
 A
 B
@@ -99,12 +96,7 @@ G
 H
 I
 J
-A
-B
-C
 AA
-A
-B
 gossiper2 knows things:
 A
 B
@@ -131,8 +123,8 @@ H
 I
 gossiper1 shared with gossiper2, some hot news!
 J
+AA
 A
-B
 gossiper1 knows things:
 A
 B
@@ -144,12 +136,7 @@ G
 H
 I
 J
-A
-B
-C
 AA
-A
-B
 gossiper2 knows things:
 A
 B
@@ -162,6 +149,4 @@ G
 H
 I
 J
-A
-B
 Bye!

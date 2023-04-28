@@ -31,3 +31,56 @@ sealed2 knows things:
 AA
 BB
 sealed3 knows nothing!
+sealed1 shared with sealed2, some hot news!
+A
+sealed1 shared with sealed2, some hot news!
+B
+sealed1 shared with sealed2, some hot news!
+D
+sealed1 knows things:
+A
+B
+C
+D
+E
+sealed2 knows things:
+AA
+BB
+A
+B
+D
+sealed3 knows nothing!
+sealed3 has nobody to gossip with right now!
+sealed1 knows things:
+A
+B
+C
+D
+E
+sealed2 knows things:
+AA
+BB
+A
+B
+D
+sealed3 knows nothing!
+sealed2 shared with sealed1, some hot news!
+AA
+sealed1 knows things:
+A
+B
+C
+D
+E
+AA
+sealed2 knows things:
+AA
+BB
+A
+B
+D
+sealed3 knows nothing!
+sealed1 at landmark1 knows 6 gossips.
+sealed2 at landmark1 knows 5 gossips.
+sealed3 at landmark1 knows 0 gossips.
+Bye!

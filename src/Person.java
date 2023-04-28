@@ -19,4 +19,6 @@ public interface Person {
     Iterator<Gossip> getGossipsToShare();
     void listenGossip(Gossip next);
     int getCapacity();
+    boolean hasGossip(Gossip sharedGossip);
+    boolean hasSharedAGossip(Person person);
 }

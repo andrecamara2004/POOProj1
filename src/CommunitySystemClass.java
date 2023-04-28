@@ -212,16 +212,22 @@ public class CommunitySystemClass implements CommunitySystem {
         Group group = person.getCurrGroup();
         Iterator<Person> personsToShare = group.listAllPeople();
         Iterator<Gossip> gossipsToShare = person.getGossipsToShare();
+        Array<Gossip> arr = new ArrayClass<>();
         while(personsToShare.hasNext()) {
             Person curPerson = personsToShare.next();
             if(curPerson != person) {
                 while(gossipsToShare.hasNext()) {
-                    curPerson.listenGossip(gossipsToShare.next());        
+                    Gossip sharedGossip = gossipsToShare.next();
+                    if(curPerson.hasGossip(sharedGossip)) {
+                        continue;
+                    }
+                    curPerson.listenGossip(sharedGossip);
+                    arr.insertLast(sharedGossip);
                 }
                 gossipsToShare.rewind();
             }
         }
-		
+
         return gossipsToShare;
 	}
 
@@ -281,6 +287,25 @@ public class CommunitySystemClass implements CommunitySystem {
         }
 
         return numOfListeners;
+    }
+
+    @Override
+    public boolean hasGossips() {
+        return gossips.size() != 0;
+    }
+
+    @Override
+    public boolean hasSharedGossips() {
+        boolean sharedGossips = false;
+        for(int i = 0; i < people.size(); i++) {
+            for(int j = 0; j < people.size(); j++) {
+                if(people.get(i).hasSharedAGossip(people.get(j))) {
+                    sharedGossips = true;
+                }
+            }
+        }
+
+        return sharedGossips;
     }
 
     
