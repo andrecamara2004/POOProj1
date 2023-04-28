@@ -26,7 +26,7 @@ public class ForgetfulPersonClass extends PersonClass {
         Array<Gossip> gossipsToShare = new ArrayClass<>(1);
         gossipsToShare.insertLast(gossips.get(posGossip));
         posGossip++;
-        if (posGossip >= capacity) {
+        if (posGossip >= gossips.size()) {
             posGossip = 0;
         }
 
@@ -37,6 +37,10 @@ public class ForgetfulPersonClass extends PersonClass {
     public void listenGossip(Gossip next) {
         if (gossips.size() == capacity) {
             gossips.removeAt(0);
+            // Adjust posGossip
+            if (posGossip > 0) {
+                posGossip--;
+            }
         }
         gossips.insertLast(next);
     }
@@ -70,14 +74,23 @@ public class ForgetfulPersonClass extends PersonClass {
     public boolean hasSharedAGossip(Person person) {
         boolean check = false;
         for (int i = 0; i < gossips.size(); i++) {
-            for (int j = 0; j < person.getGossips().size(); j++) {
-                if (this.gossips.get(i).equals(person.getGossips().get(j))) {
-                    check = true;
-                }
+            if (gossips.get(i).getShares() > 0) {
+                check = true;
+                break;
             }
         }
 
         return check;
     }
+
+	@Override
+	public Iterator<Gossip> getGossipsList() {
+		Array<Gossip> list = new ArrayClass<Gossip>(gossips.size());
+		for (int i = 0; i < gossips.size(); i++) {
+			list.insertAt(gossips.get((posGossip + i) % gossips.size()), i);
+		}
+
+		return list.iterator();
+	}    
 
 }

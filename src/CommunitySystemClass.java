@@ -198,12 +198,15 @@ public class CommunitySystemClass implements CommunitySystem {
 	@Override
 	public void startGossip(Gossip gossip, Person person) {
 		gossips.insertLast(gossip);
-        if(person.getType().equals("forgetful") && person.getGossips().size() == person.getCapacity()) {
-            person.getGossips().removeAt(0);
-            person.getGossips().insertLast(gossip);
-        } else {
-            person.getGossips().insertLast(gossip);
-        }
+        person.listenGossip(gossip);
+        // if(person.getType().equals("forgetful") && person.getGossips().size() == person.getCapacity()) {
+            
+        //     person.getGossips().removeAt(0);
+        //     person.getGossips().insertLast(gossip);
+            
+        // } else {
+        //     person.getGossips().insertLast(gossip);
+        // }
 	}
 
 	@Override
@@ -222,12 +225,14 @@ public class CommunitySystemClass implements CommunitySystem {
                         continue;
                     }
                     curPerson.listenGossip(sharedGossip);
+                    sharedGossip.registerShare();
                     arr.insertLast(sharedGossip);
                 }
                 gossipsToShare.rewind();
             }
         }
-
+        
+        
         return gossipsToShare;
 	}
 
@@ -299,8 +304,13 @@ public class CommunitySystemClass implements CommunitySystem {
         boolean sharedGossips = false;
         for(int i = 0; i < people.size(); i++) {
             for(int j = 0; j < people.size(); j++) {
+                if (i == j) {
+                    continue;
+                }
+
                 if(people.get(i).hasSharedAGossip(people.get(j))) {
                     sharedGossips = true;
+                    break;
                 }
             }
         }
@@ -308,5 +318,22 @@ public class CommunitySystemClass implements CommunitySystem {
         return sharedGossips;
     }
 
-    
+    @Override
+    public Iterator<Gossip> listMostSharedGossips() {
+        Array<Gossip> mostSharedGossips = new ArrayClass<>();
+        int mostShares = 0;
+        for (int i = 0; i < gossips.size(); i++) {
+            if(gossips.get(i).getShares() > mostShares) {
+                mostShares = gossips.get(i).getShares();
+            }
+        }
+
+        for (int i = 0; i < gossips.size(); i++) {
+            if(gossips.get(i).getShares() == mostShares) {
+                mostSharedGossips.insertLast(gossips.get(i));
+            }
+        }
+
+        return mostSharedGossips.iterator();
+    }
 }

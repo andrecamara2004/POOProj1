@@ -17,6 +17,7 @@ public interface Person {
     Array<Gossip> getGossips();
     boolean hasGossipsToShare();
     Iterator<Gossip> getGossipsToShare();
+    Iterator<Gossip> getGossipsList();
     void listenGossip(Gossip next);
     int getCapacity();
     boolean hasGossip(Gossip sharedGossip);

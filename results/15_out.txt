@@ -34,18 +34,18 @@ AA
 forgetful1 shared with forgetful2, some hot news!
 D
 forgetful1 knows things:
-D
 E
 AA
+D
 forgetful2 knows things:
 AA
 D
 forgetful1 shared with forgetful2, some hot news!
 E
 forgetful1 knows things:
+AA
 D
 E
-AA
 forgetful2 knows things:
 AA
 D
@@ -55,9 +55,9 @@ AA
 forgetful1 shared with forgetful2, some hot news!
 D
 forgetful1 knows things:
-D
 E
 AA
+D
 forgetful2 knows things:
 AA
 D
@@ -66,9 +66,9 @@ forgetful1 joined forgetful3, at the landmark1.
 forgetful1 shared with forgetful3, some hot news!
 D
 forgetful1 knows things:
-D
 E
 AA
+D
 forgetful2 knows things:
 AA
 D

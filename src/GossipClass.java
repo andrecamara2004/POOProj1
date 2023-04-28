@@ -5,11 +5,13 @@ public class GossipClass implements Gossip {
     private Person owner;
     private Array<Person> targets;
     private String gossip;
+    private int shares;
 
     public GossipClass(Person owner, Array<Person> targets, String gossip) {
         this.owner = owner;
         this.targets = targets;
         this.gossip = gossip;
+        this.shares = 0;
     }
 
     public String getGossip() {
@@ -71,5 +73,20 @@ public class GossipClass implements Gossip {
     @Override
     public Array<Person> getTargets() {
         return targets;
+    }
+
+    @Override
+    public void registerShare() {
+        shares++;
+    }
+
+    @Override
+    public int getShares() {
+        return shares;
+    }
+
+    @Override
+    public void setSharesToZero() {
+        shares = 0;
     }
 }

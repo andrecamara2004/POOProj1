@@ -30,9 +30,6 @@ B
 C
 Have you heard about gossiper1? J
 gossiper1 knows things:
-A
-B
-C
 D
 E
 F
@@ -40,15 +37,15 @@ G
 H
 I
 J
+A
+B
+C
 gossiper2 knows things:
 A
 B
 C
 Have you heard about gossiper2, gossiper1? AA
 gossiper1 knows things:
-A
-B
-C
 D
 E
 F
@@ -56,6 +53,9 @@ G
 H
 I
 J
+A
+B
+C
 gossiper2 knows things:
 A
 B
@@ -66,9 +66,6 @@ A
 B
 C
 gossiper1 knows things:
-A
-B
-C
 D
 E
 F
@@ -76,19 +73,19 @@ G
 H
 I
 J
-gossiper2 knows things:
 A
 B
 C
+gossiper2 knows things:
 AA
+A
+B
+C
 gossiper2 shared with gossiper1, some hot news!
 AA
 A
 B
 gossiper1 knows things:
-A
-B
-C
 D
 E
 F
@@ -97,11 +94,14 @@ H
 I
 J
 AA
-gossiper2 knows things:
 A
 B
 C
+gossiper2 knows things:
+C
 AA
+A
+B
 gossiper1 shared with gossiper2, some hot news!
 D
 E
@@ -111,8 +111,6 @@ G
 H
 I
 gossiper2 knows things:
-A
-B
 C
 AA
 D
@@ -121,12 +119,13 @@ F
 G
 H
 I
+A
+B
 gossiper1 shared with gossiper2, some hot news!
 J
 AA
 A
 gossiper1 knows things:
-A
 B
 C
 D
@@ -137,9 +136,8 @@ H
 I
 J
 AA
+A
 gossiper2 knows things:
-A
-B
 C
 AA
 D
@@ -149,4 +147,6 @@ G
 H
 I
 J
+A
+B
 Bye!

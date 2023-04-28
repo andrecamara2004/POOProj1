@@ -99,13 +99,18 @@ public class Main {
         } else if(!community.hasSharedGossips()) {
             System.out.println("No gossips were shared, yet!");
         } else {
-            System.out.printf("The hottest gossips were shared %d times\n", community.getNumOfMostSharedGossip());
-            Iterator<Gossip> iter = community.listAllMostSharedGossips();
-            while(iter.hasNext()) {
-                System.out.println(iter.next().getGossip());
+            Iterator<Gossip> iter = community.listMostSharedGossips();
+            Boolean first = true;
+            while (iter.hasNext()) {
+                Gossip gossip = iter.next();
+                if (first) {
+                    System.out.printf("The hottest gossips were shared %d times!\n", gossip.getShares());
+                    first = false;
+                }
+
+                System.out.println(gossip.getGossip());
             }
         }
-		
 	}
 
 	private static void processInfotainmentCommand(Scanner in, CommunitySystem community) {
@@ -117,7 +122,8 @@ public class Main {
         } else {
 
             System.out.printf("%s knows things:\n", name);
-            Iterator<Gossip> iter = community.getPerson(name).getGossips().iterator();
+
+            Iterator<Gossip> iter = community.getPerson(name).getGossipsList();
             while (iter.hasNext()) {
                 Gossip gossip = iter.next();
                 System.out.println(gossip.getGossip());

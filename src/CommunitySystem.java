@@ -212,4 +212,7 @@ public interface CommunitySystem {
      boolean hasGossips();
 
     boolean hasSharedGossips();
+
+    Iterator<Gossip> listMostSharedGossips();
+
 }

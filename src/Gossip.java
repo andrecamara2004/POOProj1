@@ -44,4 +44,9 @@ public interface Gossip {
      */
     Array<Person> getTargets();
 
+    void registerShare();
+
+    int getShares();
+
+    void setSharesToZero();
 }

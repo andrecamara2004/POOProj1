@@ -1,0 +1,17 @@
+Java Main < ..\tests\1_in.txt > ..\results\1_out.txt 
+Java Main < ..\tests\2_in.txt > ..\results\2_out.txt 
+Java Main < ..\tests\3_in.txt > ..\results\3_out.txt 
+Java Main < ..\tests\4_in.txt > ..\results\4_out.txt 
+Java Main < ..\tests\5_in.txt > ..\results\5_out.txt 
+Java Main < ..\tests\6_in.txt > ..\results\6_out.txt 
+Java Main < ..\tests\7_in.txt > ..\results\7_out.txt 
+Java Main < ..\tests\8_in.txt > ..\results\8_out.txt 
+Java Main < ..\tests\9_in.txt > ..\results\9_out.txt 
+Java Main < ..\tests\10_in.txt > ..\results\10_out.txt
+Java Main < ..\tests\11_in.txt > ..\results\11_out.txt
+Java Main < ..\tests\12_in.txt > ..\results\12_out.txt
+Java Main < ..\tests\13_in.txt > ..\results\13_out.txt
+Java Main < ..\tests\14_in.txt > ..\results\14_out.txt
+Java Main < ..\tests\15_in.txt > ..\results\15_out.txt
+Java Main < ..\tests\16_in.txt > ..\results\16_out.txt
+Java Main < ..\tests\17_in.txt > ..\results\17_out.txt

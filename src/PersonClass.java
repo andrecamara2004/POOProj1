@@ -71,6 +71,8 @@ public abstract class PersonClass implements Person {
 
     @Override
     public abstract Iterator<Gossip> getGossipsToShare();
+    @Override
+    public abstract Iterator<Gossip> getGossipsList();
 
     @Override
     public abstract void listenGossip(Gossip next);
