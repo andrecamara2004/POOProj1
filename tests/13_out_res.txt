@@ -34,16 +34,18 @@ Have you heard about William Shakespeare? Rumor has it that William Shakespeare 
 Have you heard about Romeo Montague, Juliet Capulet? In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
 Have you heard about Juliet Capulet? Oh Juliet, I love you!
 Have you heard about Juliet Capulet, Romeo Montague? My love, Romeo!
-Mercutio at home knows 6 gossips.
-Friar Lawrence at home knows 2 gossips.
+Mercutio at home knows 4 gossips.
+Friar Lawrence at home knows 1 gossips.
 Romeo Montague at tree knows 0 gossips.
 Juliet Capulet at tree knows 0 gossips.
 William Shakespeare at home knows 0 gossips.
+Here is what we know about Romeo Montague:
 0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
 0 Juliet and Romeo, r in luv!
 0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
 0 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
 0 My love, Romeo!
+Here is what we know about Juliet Capulet:
 0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
 0 Juliet and Romeo, r in luv!
 0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
@@ -53,5 +55,6 @@ William Shakespeare at home knows 0 gossips.
 0 My love, Romeo!
 Mercutio lives a very boring life!
 Friar Lawrence lives a very boring life!
+Here is what we know about William Shakespeare:
 0 Rumor has it that William Shakespeare is a gossiper.
 Bye!

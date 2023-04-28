@@ -11,8 +11,8 @@ public abstract class PersonClass implements Person{
 
     public PersonClass(String name) {
         this.name = name;
-        this.landmark = null;
         this.gossips = new ArrayClass<>();
+        this.landmark = null;
         this.group = null;
     }
 

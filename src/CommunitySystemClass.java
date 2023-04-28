@@ -198,7 +198,7 @@ public class CommunitySystemClass implements CommunitySystem {
 	@Override
 	public void startGossip(Gossip gossip, Person person) {
 		gossips.insertLast(gossip);
-        if(person.getType().equals("fortgetful") && person.getGossips().size() == person.getCapacity()) {
+        if(person.getType().equals("forgetful") && person.getGossips().size() == person.getCapacity()) {
             person.getGossips().removeAt(0);
             person.getGossips().insertLast(gossip);
         } else {

@@ -121,7 +121,7 @@ public class Main {
         } else if (community.getGossipsAboutPerson(name).size() == 0) {
             System.out.println(name + " lives a very boring life!");
         } else {
-
+            System.out.printf("Here is what we know about %s:\n", name);
             Iterator<Gossip> iter = community.getGossipsAboutPerson(name).iterator();
             while (iter.hasNext()) {
                 Gossip next = iter.next();
