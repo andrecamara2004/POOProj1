@@ -5,19 +5,21 @@ public abstract class PersonClass implements Person {
     private String name;
     private LandMark landmark;
     private Group group;
+    protected Array<Gossip> gossips;
+    protected int posGossip;
+
 
     public PersonClass(String name) {
         this.name = name;
         this.landmark = null;
         this.group = null;
+        this.posGossip = 0;
     }
 
     @Override
     public String getName() {
         return name;
     }
-
-    public abstract String getType();
 
     @Override
     public abstract int getNumOfGossips();
@@ -71,8 +73,16 @@ public abstract class PersonClass implements Person {
 
     @Override
     public abstract Iterator<Gossip> getGossipsToShare();
-    @Override
-    public abstract Iterator<Gossip> getGossipsList();
+
+	@Override
+	public Iterator<Gossip> getGossipsList() {
+		Array<Gossip> list = new ArrayClass<Gossip>(gossips.size());
+		for (int i = 0; i < gossips.size(); i++) {
+			list.insertAt(gossips.get((posGossip + i) % gossips.size()), i);
+		}
+
+		return list.iterator();
+	}
 
     @Override
     public abstract void listenGossip(Gossip next);
@@ -81,5 +91,18 @@ public abstract class PersonClass implements Person {
 
     @Override
     public abstract boolean hasGossip(Gossip sharedGossip);
+
+    @Override
+    public boolean hasSharedAGossip(Person person) {
+        boolean check = false;
+        for (int i = 0; i < gossips.size(); i++) {
+            if (gossips.get(i).getShares() > 0) {
+                check = true;
+                break;
+            }
+        }
+
+        return check;
+    }
 
 }

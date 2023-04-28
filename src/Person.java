@@ -3,8 +3,6 @@ import dataStructures.*;
 public interface Person {
 
     String getName();
-    String getType();
-    //hasGossips
     int getNumOfGossips();
     void goToHome();
     LandMark getCurrLandmark();

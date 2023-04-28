@@ -3,19 +3,10 @@ import dataStructures.ArrayClass;
 import dataStructures.Iterator;
 
 public class GossiperPersonClass extends PersonClass {
-	private String type;
-	private Array<Gossip> gossips;
-	private int posGossip;
 
 	public GossiperPersonClass(String name) {
 		super(name);
-		this.gossips = new ArrayClass<>();
-		this.type = "gossiper";
-		this.posGossip = 0;
-	}
-
-	public String getType() {
-		return type;
+		super.gossips = new ArrayClass<>();
 	}
 
 	@Override
@@ -61,27 +52,4 @@ public class GossiperPersonClass extends PersonClass {
     public boolean hasGossip(Gossip sharedGossip) {
         return gossips.searchForward(sharedGossip);
     }
-	
-    @Override
-    public boolean hasSharedAGossip(Person person) {
-        boolean check = false;
-        for (int i = 0; i < gossips.size(); i++) {
-            if (gossips.get(i).getShares() > 0) {
-                check = true;
-                break;
-            }
-        }
-
-		return check;
-	}
-
-	@Override
-	public Iterator<Gossip> getGossipsList() {
-		Array<Gossip> list = new ArrayClass<Gossip>(gossips.size());
-		for (int i = 0; i < gossips.size(); i++) {
-			list.insertAt(gossips.get((posGossip + i) % gossips.size()), i);
-		}
-
-		return list.iterator();
-	}
 }
