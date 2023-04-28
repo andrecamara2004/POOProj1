@@ -1,0 +1,57 @@
+tree added.
+Mercutio can only remember up to 4 gossips.
+Friar Lawrence can only remember up to 1 gossips.
+Balcony of Casa di Giulietta added.
+Capulet orchard added.
+Romeo and Juliet's tomb added.
+Capulet mansion added.
+Romeo Montague lips are sealed.
+Juliet Capulet lips are sealed.
+William Shakespeare is a gossiper.
+Romeo Montague is now at tree.
+Juliet Capulet is now at tree.
+Mercutio at home knows 0 gossips.
+Friar Lawrence at home knows 0 gossips.
+Romeo Montague at tree knows 0 gossips.
+Juliet Capulet at tree knows 0 gossips.
+William Shakespeare at home knows 0 gossips.
+Have you heard about Romeo Montague, Juliet Capulet? Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
+Mercutio at home knows 1 gossips.
+Friar Lawrence at home knows 0 gossips.
+Romeo Montague at tree knows 0 gossips.
+Juliet Capulet at tree knows 0 gossips.
+William Shakespeare at home knows 0 gossips.
+Have you heard about Juliet Capulet, Romeo Montague? Juliet and Romeo, r in luv!
+Invalid number 0 of gossip targets!
+Invalid number -1 of gossip targets!
+Romeu Montargil does not exist!
+Romeu Montague does not exist!
+Julieta Capilet does not exist!
+Have you heard about Romeo Montague, Juliet Capulet? These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+Duplicate gossip!
+Have you heard about Juliet Capulet? Juliet is not really dead, she is just sleeping.
+Have you heard about William Shakespeare? Rumor has it that William Shakespeare is a gossiper.
+Have you heard about Romeo Montague, Juliet Capulet? In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
+Have you heard about Juliet Capulet? Oh Juliet, I love you!
+Have you heard about Juliet Capulet, Romeo Montague? My love, Romeo!
+Mercutio at home knows 6 gossips.
+Friar Lawrence at home knows 2 gossips.
+Romeo Montague at tree knows 0 gossips.
+Juliet Capulet at tree knows 0 gossips.
+William Shakespeare at home knows 0 gossips.
+0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
+0 Juliet and Romeo, r in luv!
+0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+0 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
+0 My love, Romeo!
+0 Romeo and Juliet, sitting on a tree, K I S S I N G! :-)
+0 Juliet and Romeo, r in luv!
+0 These violent delights have violent ends And in their triumph die, like fire and powder, Which, as they kiss, consume.
+0 Juliet is not really dead, she is just sleeping.
+0 In the name of love! What is love? A madness most discreet, A choking gall and a preserving sweet.
+0 Oh Juliet, I love you!
+0 My love, Romeo!
+Mercutio lives a very boring life!
+Friar Lawrence lives a very boring life!
+0 Rumor has it that William Shakespeare is a gossiper.
+Bye!

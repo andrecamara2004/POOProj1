@@ -9,7 +9,7 @@ public class GossipClass implements Gossip {
 
     public GossipClass(Person owner, Array<Person> targets, String gossip) {
         this.owner = owner;
-        this.targets = new ArrayClass<>(0);
+        this.targets = targets;
         this.gossip = gossip;
         listeners = new ArrayClass<>();
     }

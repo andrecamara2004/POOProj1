@@ -84,10 +84,9 @@ public interface Array<E> {
 	Iterator<E> iterator();
 
 	/**
-	 * Devolve uma cï¿½pia do array com os elementos ordenados
+	 * Devolve uma cópia do array com os elementos ordenados
 	 * 
 	 * @return array ordenado
 	 */
 	Array<E> sort();
-
 }

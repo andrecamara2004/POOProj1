@@ -20,6 +20,7 @@ public class Main {
     private static final String SEALED = "sealed";
     private static final String PEOPLE = "people";
     private static final String GOSSIP = "gossip";
+	private static final String HOTTEST = "hottest";
 
     public static void main(String[] args) throws Exception {
         commands();
@@ -80,6 +81,8 @@ public class Main {
                 case INFOTAINMENT:
                     processInfotainmentCommand(in, community);
                     break;
+                case HOTTEST:
+                	processHottestCommand(community);
                 default:
                     processUnkwonCommand();
                     break;
@@ -88,7 +91,13 @@ public class Main {
         } while (!command.equals(EXIT));
     }
 
-    private static void processInfotainmentCommand(Scanner in, CommunitySystem community) {
+    
+    private static void processHottestCommand(CommunitySystem community) {
+		
+		
+	}
+
+	private static void processInfotainmentCommand(Scanner in, CommunitySystem community) {
         String name = in.nextLine().trim();
         if (!community.hasPerson(name)) {
             System.out.println(name + " does not exist!");
