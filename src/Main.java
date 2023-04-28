@@ -94,7 +94,17 @@ public class Main {
 
     
     private static void processHottestCommand(CommunitySystem community) {
-		
+		if(!community.hasGossips()) {
+            System.out.println("No gossips we are aware of!");
+        } else if(!community.hasSharedGossips()) {
+            System.out.println("No gossips were shared, yet!");
+        } else {
+            System.out.printf("The hottest gossips were shared %d times\n", community.getNumOfMostSharedGossip());
+            Iterator<Gossip> iter = community.listAllMostSharedGossips();
+            while(iter.hasNext()) {
+                System.out.println(iter.next().getGossip());
+            }
+        }
 		
 	}
 
